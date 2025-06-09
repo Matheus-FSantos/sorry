@@ -3,18 +3,21 @@ import "./app.css";
 import { useWindowSize } from 'react-use'
 import ReactConfetti from "react-confetti";
 import Img from "./img.jpeg"
+import vasco from './vasco.mp3'
+import atumalaca from './atumalaca.mp3'
+import useSound from "use-sound";
 
 const App = () => {
   const { width, height } = useWindowSize()
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
   const [run, setRun] = useState<boolean>(false);
+  const [atumalacaSound] = useSound(atumalaca);
+  const [vascoSound] = useSound(vasco);
 
   const handleClick = () => {
     setRun(true);
-    const BackgroundAudio = new Audio("src/vasco.mp3");
-    BackgroundAudio.play();
-    const BackgroundAudio2 = new Audio("src/atumalaca.mp3");
-    BackgroundAudio2.play();
+    vascoSound();
+    atumalacaSound();
   };
 
   const handleNo = () => {

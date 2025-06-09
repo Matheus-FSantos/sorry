@@ -46,3 +46,6 @@ div.imagens {
   opacity: 50%;
 }
 
+body {
+  overflow: hidden;
+}
